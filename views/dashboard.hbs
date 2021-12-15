@@ -1,0 +1,42 @@
+<h3>Hi {{name}}</h3>
+
+<h1>Dashboard</h1>
+
+{{#if quotes}}
+  <table>
+    <thead>
+      <tr>
+        <th>Quote</th>
+        <th>Author</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each quotes}}
+        <tr>
+          <td><a href="/quotes/{{_id}}">{{stripTags quote}}</a></td>
+          <td>{{author}}</td>
+          <td>{{status}}</td>
+          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+          <td class="flex-row">
+            <a href="/quotes/edit/{{_id}}" class="btn">
+              <i class="fas fa-edit"></i>
+            </a>
+
+            <form action="/quotes/{{_id}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn red">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+
+{{else}}
+  <div>There are no quotes yet</div>
+{{/if}}

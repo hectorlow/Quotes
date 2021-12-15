@@ -1,0 +1,29 @@
+.login-container {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.float-right {
+  float: right;
+}
+
+.fa-large {
+  font-size: 24px;
+}
+
+.flex-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

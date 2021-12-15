@@ -1,0 +1,1 @@
+Application to save and share favourite quotes
